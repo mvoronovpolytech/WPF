@@ -1,0 +1,21 @@
+﻿<Window x:Class="Canvas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Canvas" Height="450" Width="600">
+    <Canvas>
+        <Rectangle Fill="PaleVioletRed" Width="100" Height="100"></Rectangle>
+        <Rectangle Fill="PaleGreen" Width="100" Height="100" Canvas.Right="0"></Rectangle>
+        <Rectangle Fill="PaleTurquoise" Width="100" Height="100" Canvas.Bottom="0"></Rectangle>
+        <Rectangle Fill="PaleGoldenrod" Width="100" Height="100" Canvas.Right="0" Canvas.Bottom="0"></Rectangle>
+        <Ellipse Fill="Crimson" Width="100" Height="100" Canvas.Left="200" Canvas.Bottom="240"></Ellipse>
+        <Ellipse Fill="GreenYellow" Width="100" Height="100" Canvas.Left="240" Canvas.Bottom="220"></Ellipse>
+        <Ellipse Fill="DarkOrange" Width="100" Height="100" Canvas.Left="280" Canvas.Bottom="200"></Ellipse>
+
+        <Ellipse Fill="Crimson" Width="100" Height="100" Canvas.Left="200" Canvas.Bottom="40"></Ellipse>
+        <Ellipse Fill="GreenYellow" Width="100" Height="100" Canvas.Left="240" Canvas.Bottom="20" Panel.ZIndex="1"></Ellipse>
+        <Ellipse Fill="DarkOrange" Width="100" Height="100" Canvas.Left="280" Canvas.Bottom="00"></Ellipse>
+    </Canvas>
+</Window>
