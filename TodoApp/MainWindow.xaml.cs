@@ -16,17 +16,35 @@ namespace TodoApp
         private void addTaskButton_Click(object sender, RoutedEventArgs e)
         {
             var todoItem = new CheckBox();
-            todoItem.Content = taskInput.Text;
+            todoItem.Content = TaskInput.Text;
             todoItem.Width = 200;
             todoItem.Height = 24;
             tasksPanel.Children.Add(todoItem);
-            taskInput.Clear();
+            TaskInput.Clear();
 
         }
 
-        private void taskInput_TextChanged(object sender, TextChangedEventArgs e)
+        private void TaskInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.addTaskButton.IsEnabled = !string.IsNullOrWhiteSpace(taskInput.Text);
+            var taskIsEmpty = string.IsNullOrWhiteSpace(TaskInput.Text);
+            this.addTaskButton.IsEnabled = !taskIsEmpty;
+            // Якщо текст не введено
+            if (taskIsEmpty)
+            {
+                // показуємо пейсхолдер "Введіть завдання"
+                this.PlaceHolder.Visibility = Visibility.Visible;
+            } else
+            {
+                // скриваємо пейсхолдер "Введіть завдання"
+                this.PlaceHolder.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void TextBlock_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            // оскільки плейсхолдер розташований поверх текстового поля за допомогою властивості Panel.ZIndex="1"
+            // то перехватуємо клік мишки на плейсхолдері та фокусуємо текстове поле
+            TaskInput.Focus();
         }
     }
 }
